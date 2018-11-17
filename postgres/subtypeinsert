@@ -1,0 +1,33 @@
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (0, 'Auto');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (1, 'Clothing');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (2, 'Entertainment');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (3, 'Food');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (4, 'Fuel');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (5, 'Gas');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (6, 'Grocery');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (7, 'Household');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (8, 'Medical');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (9, 'Phone');
+INSERT INTO public."subType"(
+	"subTypeID", "typeName")
+	VALUES (10, 'Utilities');

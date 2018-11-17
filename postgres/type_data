@@ -1,0 +1,6 @@
+INSERT INTO public.type(
+	type_id, name)
+	VALUES (0, 'Expense');
+INSERT INTO public.type(
+	type_id, name)
+	VALUES (1, 'Income');
