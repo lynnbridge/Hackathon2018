@@ -35,4 +35,16 @@ angular.module('nodeBudget', [])
                     console.log('Error: ' + data);
                 });
         };
+
+        $scope.createExpense = () => {
+            $http.post('/api/v1/Budget', $scope.formData)
+            .success((data) => {
+              $scope.formData = {};
+              $scope.todoData = data;
+              console.log(data);
+            })
+            .error((error) => {
+              console.log('Error: ' + error);
+            });
+          };
     });

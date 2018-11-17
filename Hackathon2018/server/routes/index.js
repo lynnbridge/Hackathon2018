@@ -6,13 +6,13 @@ const connectionString =  'postgresql://bridget:password123@localhost:5432/Budge
 
 router.get('/', function (req, res, next) {
   res.sendFile(path.join(
-    __dirname, '..', '..', 'client', 'views', 'IncomeExpense.html'));
+    __dirname, '..', '..', 'client', 'views', 'Transactions.html'));
 });
 
 router.post('/api/v1/Budget', (req, res, next) => {
   const results = [];
   // Grab data from http request
-  const data = {text: req.body.text, complete: false};
+  const data = {type: req.body.text, amount: req.body.text, amount: req.body,text, location: req.body.text, reason: req.body.text, subType: req.body.text};
   // Get a Postgres client from the connection pool
   pg.connect(connectionString, (err, client, done) => {
     // Handle connection errors
@@ -22,8 +22,8 @@ router.post('/api/v1/Budget', (req, res, next) => {
       return res.status(500).json({success: false, data: err});
     }
     // SQL Query > Insert Data
-    client.query('INSERT INTO test(text, complete) values($1, $2)',
-    [data.text, data.complete]);
+    client.query('INSERT INTO income_expenses_sheet(type, date, amount, location, reason, subType) values($1, now(), $2, $3, $4, $5)',
+    [data.type_id, data.date, data.amount, data.location, data.reason, data.subType]);
     // SQL Query > Select Data
     const query = client.query('SELECT * FROM test ORDER BY id ASC');
     // Stream results back one row at a time
@@ -49,7 +49,7 @@ router.get('/api/v1/Budget', (req, res, next) => {
       return res.status(500).json({success: false, data: err});
     }
     // SQL Query > Select Data
-    const query = client.query('SELECT * FROM test ORDER BY id ASC;');
+    const query = client.query('SELECT * FROM subTypeID ORDER BY id ASC;');
     // Stream results back one row at a time
     query.on('row', (row) => {
       results.push(row);
@@ -61,6 +61,11 @@ router.get('/api/v1/Budget', (req, res, next) => {
     });
   });
 });
+
+router.get('api/v1/Budget', (req, res, next) => {
+  const results = [];
+
+})
 
 router.put('/api/v1/Budget/:test_id', (req, res, next) => {
   const results = [];
