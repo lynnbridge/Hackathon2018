@@ -29,11 +29,10 @@
     <br>
     <form>
         Income/Expense
-        <select name="type" ng-model="formData.type">
+        <select class="select-list" name="type" ng-model="formData.type">
             <option value="Income">Income</option>
             <option value="Expense">Expense</option>
         </select>
-        <br>
         <br>
         Amount:
         <input name="Amount" type="Text" placeholder="Enter text..." ng-model="formData.amount">
@@ -58,12 +57,11 @@
             <option value="Utilities">Utilities</option>
         </select>
         <br>
-        <br>
         Reason:
         <input name="reason" type="text" class="form-control input-lg" placeholder="Describe need for purchase" ng-model="formData.reason">
         <br>
 
-        <input name="submit" type="submit" ng-click="createExpense()">
+        <input class="submit-button" name="submit" type="submit" ng-click="createExpense()">
     </form>
 
     <div class="dropdown">
